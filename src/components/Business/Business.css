@@ -1,0 +1,46 @@
+.Business-parent {
+    text-align: center;
+    font-size: 15px;
+    /* background-color: pink; */
+    height: 400px;
+    width: 400px;
+    align-items: center;
+    padding-top: 75px;
+}
+
+.Business-img {
+    width: 250px;
+    height: auto;
+}
+
+.Business-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: red; */
+    padding: 0px;
+    margin: 0px;
+}
+
+.Business-name {
+    text-align: left;
+    padding-left: 75px;
+}
+
+.Business-info p {
+    padding: 0px;
+    margin: 0px;
+}
+
+.Business-address {
+    width: 150px;
+    text-align: left;
+    /* background-color: yellow; */
+}
+
+.Business-misc {
+    width: 100px;
+    text-align: right;
+    /* background-color: aqua; */
+}
+
