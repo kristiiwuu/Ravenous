@@ -1,5 +1,6 @@
 import './App.css';
-import Business from './components/Business/Business.js';
+import BusinessList from './components/BusinessList/BusinessList';
+import SearchBar from './components/SearchBar/SearchBar';
 
 function App() {
   return (
@@ -7,10 +8,11 @@ function App() {
       <header className="App-header">
         <h1>ravenous</h1>
       </header>
+      <div className='App-searchbar'>
+        <SearchBar />
+      </div>
       <div className="App-business-row">
-        <Business />
-        <Business />
-        <Business />
+        <BusinessList />
       </div>
       
   </div>
