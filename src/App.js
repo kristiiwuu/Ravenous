@@ -14,6 +14,9 @@ function App() {
       <div className="App-business-row">
         <BusinessList />
       </div>
+      <div className="App-business-row">
+        <BusinessList />
+      </div>
       
   </div>
   );

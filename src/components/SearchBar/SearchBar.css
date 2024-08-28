@@ -1,0 +1,59 @@
+.SearchBar-parent {
+    /* background-color: #95b3ed; */
+    color: white;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url("https://img.freepik.com/free-vector/blurred-background-with-light-colors_1034-245.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1724716800&semt=ais_hybrid");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.SearchBar-sortby {
+    display: flex;
+    justify-content: center;
+}
+
+.SearchBar-sortby ul{
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.SearchBar-sortby li {
+    list-style: none;
+    width: 10rem;
+    cursor: pointer;
+    color: #282c34;
+}
+
+.SearchBar-sortby li:hover{
+    color: rgb(242, 181, 66);
+}
+
+.SearchBar-input {
+    justify-content: center;
+}
+
+.SearchBar-input input {
+    margin: 10px;
+    width: 300px;
+    height: 20px;
+    padding: 10px;
+    margin: 20px;
+}
+
+/* .SearchBar-input input::placeholder {
+} */
+
+.SearchBar-button{
+    height: 40px;
+    width: 100px;
+    background-color: rgb(242, 181, 66);
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    border-width: 1px;
+    margin: 10px;
+}
