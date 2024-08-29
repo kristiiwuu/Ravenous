@@ -2,12 +2,14 @@ import React from 'react';
 import Business from '../Business/Business.js';
 import './BusinessList.css';
 
-function BusinessList() {
+function BusinessList(props) {
+    const indvBusiness = props.businesses.map((business) => {
+                                            // need key
+        return <Business business={business} key={business.name}/>; 
+    });
     return (
         <div className='BusinessList-row'>
-            <Business />
-            <Business />
-            <Business />
+            {indvBusiness}
         </div>
     )
 }
