@@ -1,4 +1,6 @@
-const apiKey = ''; // insert api key
+require('dotenv').config();
+
+const apiKey = process.env.API_KEY; // environment variable
 
 const Yelp = {
     search(term, location, sortBy) {
