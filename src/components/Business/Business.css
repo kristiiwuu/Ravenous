@@ -1,23 +1,25 @@
 .Business-parent {
     text-align: center;
     font-size: 15px;
-    /* background-color: pink; */
     height: 400px;
     width: 400px;
     align-items: center;
     padding-top: 75px;
 }
 
-.Business-img {
-    width: 250px;
-    height: auto;
+.Business-imgContainer {
+    height: 16.66rem;
+    overflow: hidden;
+}
+
+.Business-image {
+    width: 70%;
 }
 
 .Business-info {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background-color: red; */
     padding: 0px;
     margin: 0px;
 }

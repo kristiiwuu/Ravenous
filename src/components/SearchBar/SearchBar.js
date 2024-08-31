@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './SearchBar.css'; // can name 'styles' anything; could be classes, Style, etc
 
-function SearchBar() { // alternative: const SearchBar = () => 
+function SearchBar(props) { // alternative: const SearchBar = () => 
     
     const [searchTerm,setSearchTerm] = useState('');
     const [location, setLocation] = useState('');
@@ -17,7 +17,9 @@ function SearchBar() { // alternative: const SearchBar = () =>
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(searchTerm, location, sortBy);
+        props.searchYelp(searchTerm, location, sortBy); // send info to top-level 
+        setSearchTerm('');
+        setLocation('');
     };
 
     const handleSortByChange = (sortByOption) => {
@@ -66,8 +68,8 @@ function SearchBar() { // alternative: const SearchBar = () =>
             <form onSubmit={handleSubmit}> 
             {/* put onSubmit here, not in button tag */}
                 <div className='SearchBar-input'>
-                    <input placeholder='Search Businesses' onChange={handleSearch}></input>
-                    <input placeholder='Where?' onChange={handleLocation}></input>
+                    <input value={searchTerm} placeholder='Search Businesses' onChange={handleSearch}></input>
+                    <input value={location} placeholder='Where?' onChange={handleLocation}></input>
                 </div>
                 <div>
                     <button className='SearchBar-button' type="submit">Let's Go</button>

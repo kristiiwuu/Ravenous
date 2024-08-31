@@ -3,7 +3,9 @@ import './Business.css';
 function Business( {business} ) {
     return (
         <div className='Business-parent'>
-            <img className='Business-img' src={business.img} alt='sushi'></img>
+            <div className='Business-imgContainer'>
+                <img className='Business-image' src={business.img} alt='sushi'></img>
+            </div>
             <h3 className='Business-name'>{business.name}</h3>
             <div className='Business-info'>
                 <div className='Business-address'>
@@ -22,3 +24,4 @@ function Business( {business} ) {
 }
 
 export default Business;
+
