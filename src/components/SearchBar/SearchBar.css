@@ -32,6 +32,11 @@
     color: rgb(242, 181, 66);
 }
 
+.SearchBar-sortby li.active{
+    color: rgb(242, 181, 66);
+    text-decoration: underline;
+}
+
 .SearchBar-input {
     justify-content: center;
 }
@@ -44,16 +49,18 @@
     margin: 20px;
 }
 
-/* .SearchBar-input input::placeholder {
-} */
-
 .SearchBar-button{
     height: 40px;
     width: 100px;
-    background-color: rgb(242, 181, 66);
+    background-color: #282c34;
     border-radius: 5px;
     color: white;
     font-weight: bold;
     border-width: 1px;
     margin: 10px;
 }
+
+.SearchBar-button:hover {
+    background-color: rgb(242, 181, 66);
+}
+

@@ -1,11 +1,40 @@
-import React from 'react';
-import './SearchBar.css';
+import React, { useState } from 'react';
+import styles from './SearchBar.css'; // can name 'styles' anything; could be classes, Style, etc
 
 function SearchBar() { // alternative: const SearchBar = () => 
+    
+    const [searchTerm,setSearchTerm] = useState('');
+    const [location, setLocation] = useState('');
+    const [sortBy, setSortBy] = useState('best_match');
+
+    const handleSearch = ({target}) => {
+        setSearchTerm(target.value);
+    };
+
+    const handleLocation = ({target}) => {
+        setLocation(target.value);
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(searchTerm, location, sortBy);
+    };
+
+    const handleSortByChange = (sortByOption) => {
+        setSortBy(sortByOption);
+    }
+    
     const sort_by = { // this can be moved outside function
         'Best Match': 'best_match',
         'Highest Rated': 'rating',
         'Most Reviewed': 'review_count'
+    };
+
+    const getSortByClass = (sortByOptionValue) => {
+        if(sortBy == sortByOptionValue) {
+            return 'active';
+        }
+        return "";
     };
 
     // Answer Key: created function 'const renderSortByOptions = () =>
@@ -13,7 +42,20 @@ function SearchBar() { // alternative: const SearchBar = () =>
     // .map((sortByOption) => { let sortByOptionValue = sortByOptions[sortByOption]; return <li>...</li>}) --> maps through the keys and accesses value
     const keys = ['Best Match', 'Highest Rated', 'Most Reviewed'];
 
-    const listItems = keys.map( key => <li key={sort_by[key]}>{key}</li>);
+    const listItems = keys.map( key => {
+        let sortByOptionValue = sort_by[key];
+        return (
+            <li 
+                className={getSortByClass(sortByOptionValue)}
+                key={sortByOptionValue}
+                onClick={() => {
+                    handleSortByChange(sortByOptionValue);
+                }}
+            >
+                {key}
+            </li>
+        );
+    });
 
     return (
         <div className='SearchBar-parent'>
@@ -21,17 +63,19 @@ function SearchBar() { // alternative: const SearchBar = () =>
                 <ul>{listItems}</ul> 
                 {/* instead of listItems, calls renderSortByOptions() here*/}
             </div>
-            <div className='SearchBar-input'>
-                <form>
-                    <input placeholder='Search Businesses'></input>
-                    <input placeholder='Where?'></input>
-                </form>
-            </div>
-            <div>
-                <button className='SearchBar-button'>Let's Go</button>
-            </div>
+            <form onSubmit={handleSubmit}> 
+            {/* put onSubmit here, not in button tag */}
+                <div className='SearchBar-input'>
+                    <input placeholder='Search Businesses' onChange={handleSearch}></input>
+                    <input placeholder='Where?' onChange={handleLocation}></input>
+                </div>
+                <div>
+                    <button className='SearchBar-button' type="submit">Let's Go</button>
+                </div>
+            </form>
         </div>
     )
 }
 
 export default SearchBar;
+
